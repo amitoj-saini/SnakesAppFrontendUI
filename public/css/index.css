@@ -1,0 +1,66 @@
+@font-face {
+    font-family: newtimes;
+    src: url(fonts/times.woff2);
+}
+
+.jumbotron {
+    height: calc(0.225 * 100vw);
+    justify-content: center;
+    color: var(--secondary);
+    font-family: newtimes;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    padding: 20px;
+}
+
+.jumbotron img {
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+}
+
+.about-expand {
+    max-width: 60%;
+}
+
+@media screen and (max-width: 1000px){
+    .jumbotron {
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+
+    .about-expand {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .jumbotron {
+        margin-top: 30%;
+        margin-bottom: 30%;
+    }
+
+    .about-expand {
+        max-width: 80%;
+    }
+}
+
+.jumbotron .text {
+    color: var(--thirdary);
+    z-index: 2;
+}
+
+.wave-overlap {
+    background-color: var(--dark-secondary);
+    min-height: calc(100% - 12vw);
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 12vw;
+    color: var(--bg);
+    display: flex;
+    width: 100%;
+}

@@ -1,0 +1,91 @@
+:root {
+    --fb-bg: #18191a;
+    --fb-post: #242526;
+    --color: rgb(255, 255, 255);
+    --darkest-color: rgb(75, 75, 75);
+    --darker-color: rgb(150, 150, 150);
+}
+
+body {
+    background: var(--fb-bg) !important;
+    color: var(--color) !important;
+}
+
+.facebook {
+    background: var(--fb-post);
+}
+
+.media {
+    border-bottom: solid var(--darkest-color) 1px;
+    display: flex;
+    padding: 10px;
+    
+}
+
+.logo-div {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.logo-div img.logo {
+    height: 35px;
+    width: 35px;
+}
+
+.logo-div img.text {
+    height: 35px;
+}
+
+.top-bar {
+    padding: 10px;
+}
+
+.top-bar {
+    align-items: center;
+    display: flex;
+}
+
+.top-bar .section {    
+    flex-direction: column;
+    padding: 0 10px;
+    display: flex;
+}
+
+.section .username {
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.section .timestamp {
+    color: var(--darker-color);
+    font-weight: 10px;
+}
+
+.pfp-div {
+    width: 35px;
+}
+
+.pfp-div img {
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+}
+
+.post-text {
+    font-size: 13px;
+    padding: 10px;
+}
+
+.post-text p {
+    margin: 0;
+}
+
+.post-images {
+    margin: 0 auto;
+    display: table;
+}
+
+.post-images img {
+    display: inline-block !important;
+}
