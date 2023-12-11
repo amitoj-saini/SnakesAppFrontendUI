@@ -1,5 +1,6 @@
 <?php 
-    
+    include "../functions/db.php";
+    $posts = getFbPosts();
     $pageTitle = "SnakeApp";
     $pageHead = '
         <link rel="stylesheet" href="/snakeapp/public/css/index.css">
@@ -23,10 +24,13 @@
                     <div class="mt-2 text-center fs-6 about-expand" style="font-size: 13px; font-weight: 200;">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae sapien in ipsum interdum efficitur. Snake services offer unparalleled expertise in reptilian care, ensuring optimal health and habitat. Trust us for comprehensive solutions, from habitat design to dietary guidance.
                     </div>
-
-                    <div class="mt-4 about-expand w-100">
-                        <!--<iframe height="639" width="500" src="http://amitojs.local/snakeapp/views/view_fbpost.php?href=https%3A%2F%2Fwww.facebook.com%2Fsafesnakeservices%2Fposts%2Fpfbid0ZZQFEympZadStERmXYxkQaJS2Btfs56kUZo5rNrFh83CZm8pNLDNR5HQuQin4McGl&show_text=true&width=500">-->
-                        
+                    <h1 class="fs-3" style="margin-top: 100px; font-family: newtimes;">News</h1>
+                    <div class="mt-2 mb-5  container d-flex justify-content-center row w-100">
+                        '.implode('', array_map(fn($post) => "
+                        <div class=\"col-auto facebook-posts mt-4\">
+                            <iframe height=\"".$post["height"]."\" width=\"500\" src=\"http://amitojs.local/snakeapp/views/view_fbpost.php?href=".urlencode($post["post"])."&show_text=true&width=500\"></iframe>
+                        </div>
+                        ", $posts)).' 
                     </div>
                 </div>
             </div>

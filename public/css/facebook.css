@@ -82,8 +82,11 @@ body {
 }
 
 .post-images {
+    text-align: center !important;
+    position: relative;
     margin: 0 auto;
     display: table;
+    
 }
 
 .post-images img {

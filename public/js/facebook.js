@@ -5,7 +5,9 @@ window.addEventListener("DOMContentLoaded", () => {
     let profile_picture = document.querySelector(`img[role="img"]`).src;
     let timestamp = document.querySelector(".timeStampContent").innerText
     let username = document.querySelector(".timeStampContent").parentElement.parentElement.previousSibling.innerText;
-    let images = Array.from(document.querySelectorAll("img")).slice(2)
+    let images = Array.from(document.querySelectorAll("img")).slice(2);
+    images = images.map((image) => {return image.parentElement.parentElement});
+
     let href = urlparams.get('href')
     document.body.innerHTML = `
         <div onclick="window.open('${href}')" class="facebook" style="width: ${urlparams.get('width')};">
@@ -36,8 +38,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 <div class="post-images" style="width: ${parseInt(urlparams.get('width'))-4};">
                     ${
                         images.map((image) => {
-                            image.parentElement.style.display = "inline-block"
-                            return image.parentElement.outerHTML
+                            console.log(image.style.cssText)
+                            image.style.display = "inline-block";                          
+                            return image.outerHTML
                         }).join("\n")
                     }
                 </div>

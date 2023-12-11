@@ -42,6 +42,10 @@ button:hover {
     color: var(--secondary);
 }
 
+.top-bar .logo-div {
+    height: 56px;
+}
+
 .top-bar i {
     font-size: 26px;
 }
