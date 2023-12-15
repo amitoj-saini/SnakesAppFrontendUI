@@ -19,20 +19,24 @@ html, body, .main {
     padding: 0;
 }
 
-button {
-    background-color: var(--light-secondary);
+button, button.opposite-btn:hover {
+    background-color: var(--light-secondary) !important;
+    border: solid transparent 1px !important;
+    color: var(--bg) !important;
     border-radius: 2.5px;
     padding: 7.5px 25px;
     font-weight: 400;
-    color: var(--bg);
     transition: 0.2s;
     font-size: 10px;
     border: none;
 }
 
-button:hover {
-    background-color: var(--secondary);
+button.opposite-btn, button:hover {
+    border: solid var(--light-secondary) 1px !important;
+    color: var(--light-secondary) !important;
+    background-color: var(--bg) !important;
 }
+
 
 .top-bar {
     border-bottom: solid var(--border) 1px;

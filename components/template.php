@@ -1,3 +1,17 @@
+<?php 
+    include_once "../functions/db.php";    
+    session_start();
+
+    $user = false;
+
+    if (isset($_SESSION["session_id"])) {
+        $session_id = $_SESSION["session_id"];
+        $user = getUserFromSession($session_id);
+    }
+
+    $GLOBALS["user"] = $user;
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

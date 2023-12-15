@@ -1,5 +1,5 @@
 <?php 
-    include "../functions/db.php";
+    include_once "../functions/db.php";
     $posts = getFbPosts();
     $pageTitle = "SnakeApp";
     $pageHead = '
@@ -28,7 +28,7 @@
                     <div class="mt-2 mb-5  container d-flex justify-content-center row w-100">
                         '.implode('', array_map(fn($post) => "
                         <div class=\"col-auto facebook-posts mt-4\">
-                            <iframe height=\"".$post["height"]."\" width=\"500\" src=\"http://amitojs.local/snakeapp/views/view_fbpost.php?href=".urlencode($post["post"])."&show_text=true&width=500\"></iframe>
+                            <iframe loading=\"lazy\" height=\"".$post["height"]."\" width=\"500\" src=\"http://amitojs.local/snakeapp/views/view_fbpost.php?href=".urlencode($post["post"])."&show_text=true&width=500\"></iframe>
                         </div>
                         ", $posts)).' 
                     </div>

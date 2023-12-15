@@ -10,6 +10,15 @@
         <a href="#">Contact</a>
     </div>
     <div class="ms-auto">
-        <button>My Orders</button>
+        <?php 
+            if ($user) {
+                echo '<button>My Orders</button>';
+            } else {
+                echo '
+                <a href="login"><button class="mx-1 opposite-btn">Login</button></a>
+                <a href="register"><button class="mx-1">Register</button></a>';
+            }
+        ?>
+        
     </div>
 </div>

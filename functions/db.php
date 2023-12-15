@@ -21,4 +21,12 @@ function getFbPosts() {
     }
     return $posts;
 }
+
+function getUserFromSession($session_id) {
+    $queryResult = $GLOBALS["conn"] -> execute_query("SELECT user_id FROM sessions WHERE session = ?", [$session_id]);
+    while ($row = $queryResult->fetch_assoc()) {
+        echo $row;
+    }
+    return false;
+}
 ?>

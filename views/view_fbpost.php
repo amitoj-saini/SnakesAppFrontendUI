@@ -1,3 +1,7 @@
+<?php
+    header('Cache-Control "public, max-age=12400";');
+?>
+
 <head>
     <link rel="stylesheet" href="/snakeapp/public/css/facebook.css">
     <script src="/snakeapp/public/js/facebook.js">

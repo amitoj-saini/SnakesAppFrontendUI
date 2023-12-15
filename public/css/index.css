@@ -35,6 +35,7 @@
     .about-expand {
         max-width: 70%;
     }
+
 }
 
 @media screen and (max-width: 750px){
@@ -45,6 +46,10 @@
 
     .about-expand {
         max-width: 80%;
+    }
+
+    .navbar {
+        display: none !important;
     }
 }
 
