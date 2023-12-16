@@ -13,8 +13,8 @@ window.addEventListener("DOMContentLoaded", () => {
         <div onclick="window.open('${href}')" class="facebook" style="width: ${urlparams.get('width')};">
             <div class="media">
                 <div class="logo-div">
-                    <img class="logo" src="/snakeapp/public/images/facebook.png">
-                    <img class="text" src="/snakeapp/public/images/facebooktitle.svg">
+                    <img class="logo" src="${public_folder}/images/facebook.png">
+                    <img class="text" src="${public_folder}/images/facebooktitle.svg">
                 </div>
                 <div style="margin-left: auto; display: flex; align-items: center; color: var(--darkest-color);">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">

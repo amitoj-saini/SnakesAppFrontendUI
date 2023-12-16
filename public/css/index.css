@@ -1,8 +1,3 @@
-@font-face {
-    font-family: newtimes;
-    src: url(fonts/times.woff2);
-}
-
 .jumbotron {
     height: calc(0.225 * 100vw);
     justify-content: center;
@@ -31,25 +26,12 @@
         margin-top: 10%;
         margin-bottom: 10%;
     }
-
-    .about-expand {
-        max-width: 70%;
-    }
-
 }
 
 @media screen and (max-width: 750px){
     .jumbotron {
         margin-top: 30%;
         margin-bottom: 30%;
-    }
-
-    .about-expand {
-        max-width: 80%;
-    }
-
-    .navbar {
-        display: none !important;
     }
 }
 

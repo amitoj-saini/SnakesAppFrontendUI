@@ -1,13 +1,21 @@
+@font-face {
+    font-family: newtimes;
+    src: url(fonts/times.woff2);
+}
+
 :root {
+    --thin-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --bg: rgb(255, 255, 255);
     --light-secondary: #16A34A;
     --secondary: rgb(45, 96, 75);
+    --mid-secondary: rgb(67, 135, 107);
+    --lightest-secondary: #30d66d;
     --dark-secondary: #011e2b;
     --border: rgb(228, 228, 231);
     --light-color: #181818;
     --color: rgb(0, 0, 0);
     --thirdary: beige;
-    
+    --gray: rgb(0, 0, 0, 0.5);
 }
 
 html, body, .main {
@@ -31,12 +39,41 @@ button, button.opposite-btn:hover {
     border: none;
 }
 
-button.opposite-btn, button:hover {
+button.opposite-btn, button:hover, input {
     border: solid var(--light-secondary) 1px !important;
     color: var(--light-secondary) !important;
     background-color: var(--bg) !important;
 }
 
+label {
+    font-family: var(--thin-font);
+    color: var(--secondary);
+    font-weight: 400;
+    font-size: 11px;
+    margin: 0 0px 2.5px 0px;
+
+}
+
+input {
+    border: none !important;
+    border-bottom: solid var(--mid-secondary) 2px !important;
+    border-radius: 0px !important;
+    box-shadow: none !important;
+    font-size: 11px !important;    
+    margin-bottom: 25px;
+    transition: 0.2s;
+}
+
+::placeholder {
+    color: var(--gray) !important;
+}
+
+input:focus {
+    border: none !important;
+    border-bottom: solid var(--lightest-secondary) 2px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
 
 .top-bar {
     border-bottom: solid var(--border) 1px;
@@ -76,4 +113,20 @@ button.opposite-btn, button:hover {
 .top-bar .navbar a:hover {
     text-decoration: underline;
     color: var(--color);
+}
+
+@media screen and (max-width: 1000px){
+    .about-expand {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .about-expand {
+        max-width: 80%;
+    }
+
+    .navbar {
+        display: none !important;
+    }
 }

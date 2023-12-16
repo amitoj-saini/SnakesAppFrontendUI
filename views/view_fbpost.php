@@ -1,10 +1,11 @@
 <?php
+    include_once "../functions/middleware.php";
     header('Cache-Control "public, max-age=12400";');
 ?>
 
 <head>
-    <link rel="stylesheet" href="/snakeapp/public/css/facebook.css">
-    <script src="/snakeapp/public/js/facebook.js">
+    <link rel="stylesheet" href="<?php echo $GLOBALS["public_folder"] ?>/css/facebook.css">
+    <script src="<?php echo $GLOBALS["public_folder"] ?>/js/facebook.js">
 </head>
 <?php
     if (isset($_GET["href"]) && isset($_GET["width"]))

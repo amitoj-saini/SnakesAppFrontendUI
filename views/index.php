@@ -1,15 +1,16 @@
 <?php 
-    include_once "../functions/db.php";
+    include_once "../functions/middleware.php";
+    include_once $GLOBALS["project_root"]."functions/db.php";
     $posts = getFbPosts();
     $pageTitle = "SnakeApp";
     $pageHead = '
-        <link rel="stylesheet" href="/snakeapp/public/css/index.css">
+        <link rel="stylesheet" href="'.$GLOBALS["public_folder"].'/css/index.css">
     ';
     $bodyContent = '
         <div class="w-100 flex-grow-1 d-flex flex-column">
             <div class="d-flex justify-content-center">
                 <div class="jumbotron fs-1">
-                    <img src="/snakeapp/public/images/jumbotron-snake.png">
+                    <img src="'.$GLOBALS["public_folder"].'/images/jumbotron-snake.png">
                     <span class="text">The worlds best Snake Product Thingy!</span>
                 </div>
             </div>
@@ -28,7 +29,7 @@
                     <div class="mt-2 mb-5  container d-flex justify-content-center row w-100">
                         '.implode('', array_map(fn($post) => "
                         <div class=\"col-auto facebook-posts mt-4\">
-                            <iframe loading=\"lazy\" height=\"".$post["height"]."\" width=\"500\" src=\"http://amitojs.local/snakeapp/views/view_fbpost.php?href=".urlencode($post["post"])."&show_text=true&width=500\"></iframe>
+                            <iframe loading=\"lazy\" height=\"".$post["height"]."\" width=\"500\" src=\"http://amitojs.local".$GLOBALS["views_folder"]."/view_fbpost.php?href=".urlencode($post["post"])."&show_text=true&width=500\"></iframe>
                         </div>
                         ", $posts)).' 
                     </div>

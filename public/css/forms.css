@@ -1,0 +1,9 @@
+.side-bar {
+    background-color: var(--secondary);
+    height: 100%;
+}
+
+.main-content {
+    min-width: 350px;
+}
+
