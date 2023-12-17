@@ -1,4 +1,4 @@
 <?php 
     include_once "../../functions/middleware.php";
-    include $GLOBALS["project_root"]."components/loggedoutforms.php";
+    include (__DIR__."/components/loggedoutforms.php");
 ?>

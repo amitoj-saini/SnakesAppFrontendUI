@@ -1,5 +1,5 @@
 <?php 
-include_once "../../functions/middleware.php";
+include_once (__DIR__."/../functions/middleware.php");
 ?>
 
 <html lang="en">
@@ -16,7 +16,7 @@ include_once "../../functions/middleware.php";
 <body>
     <main class="main">
         <?php
-            include $GLOBALS["project_root"]."components/topbar.php";
+            include (__DIR__."/topbar.php");
             echo $bodyContent; 
         ?>
     </main>

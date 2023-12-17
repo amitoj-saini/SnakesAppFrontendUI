@@ -1,10 +1,11 @@
 <?php
-    include_once "../functions/middleware.php";
+    include_once (__DIR__."/../functions/middleware.php");
     header('Cache-Control "public, max-age=12400";');
 ?>
 
 <head>
     <link rel="stylesheet" href="<?php echo $GLOBALS["public_folder"] ?>/css/facebook.css">
+    <script>const public_folder = "<?php echo $GLOBALS["public_folder"] ?>"</script>
     <script src="<?php echo $GLOBALS["public_folder"] ?>/js/facebook.js">
 </head>
 <?php

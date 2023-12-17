@@ -1,6 +1,6 @@
 <?php 
-    include_once "../functions/middleware.php";
-    include_once $GLOBALS["project_root"]."functions/db.php";
+    include_once (__DIR__."/../functions/middleware.php");
+    include_once (__DIR__."/../functions/db.php");
     $posts = getFbPosts();
     $pageTitle = "SnakeApp";
     $pageHead = '
@@ -37,5 +37,5 @@
             </div>
         </div>
     ';
-    include "../components/template.php";
+    include (__DIR__."/../components/template.php");
 ?>
