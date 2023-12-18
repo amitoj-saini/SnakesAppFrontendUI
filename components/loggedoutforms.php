@@ -1,5 +1,5 @@
 <?php
-    include (__DIR__."/../functions/captcha.php");
+    include_once (__DIR__."/../functions/captcha.php");
 
     $captcha = "";
 
@@ -27,6 +27,7 @@
                         <form method="'.$formMethod.'" action="'.$formAction.'">
                             '.$formHtml.'
                             '.$captcha.'
+                            <p style="font-size: 10px; color: red;">'.$error.'</p>
                             <button type="submit" class="opposite-btn">'.$buttonContent.'</button>
                         </form>
                     </div>

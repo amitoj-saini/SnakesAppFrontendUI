@@ -53,8 +53,8 @@ function getUserFromSession($session_id) {
     return false;
 }
 
-function createUser($firstName, $lastName, $email, $password) {
-    $queryResult = $GLOBALS["conn"] -> execute_query("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?);", [$firstName, $lastName, $email, password_hash($password, PASSWORD_DEFAULT)]);
+function createUser($firstName, $lastName, $email, $phoneNumber, $billingAddress, $password) {
+    $queryResult = $GLOBALS["conn"] -> execute_query("INSERT INTO users (first_name, last_name, email, phone_number, billing_address, password) VALUES (?, ?, ?, ?, ?, ?);", [$firstName, $lastName, $email, $phoneNumber, $billingAddress, password_hash($password, PASSWORD_DEFAULT)]);
     if ($queryResult) {
         return $GLOBALS["conn"]->insert_id;
     }
@@ -71,6 +71,31 @@ function logoutAndDelete($session_id) {
     # this is the key session id not the sessionId itself
     $queryResult = $GLOBALS["conn"] -> execute_query("DELETE FROM sessions WHERE id = ?;", [$session_id]);
     if ($queryResult) return true;
+    return false;
+}
+
+function verifyUser($email, $password) {
+    $users = $GLOBALS["conn"]->execute_query("SELECT * FROM users WHERE email = ?", [$email]);
+    while ($user = $users->fetch_assoc()) {
+        if (password_verify($password, $user["password"])) {
+            return $user;
+        }
+    }
+    return false;
+}
+
+function updateUser($user_id, $arr) {
+    $setClause = implode(', ', array_map(function ($key) {
+        return "$key = ?";
+    }, array_keys($arr)));
+    
+    $parameters = array_values($arr);
+    $parameters[] = $user_id;
+    $query = "UPDATE users SET $setClause WHERE id = ?";
+    $result = $GLOBALS["conn"]->execute_query($query, $parameters);
+    if ($result) {
+        return true;
+    }
     return false;
 }
 ?>

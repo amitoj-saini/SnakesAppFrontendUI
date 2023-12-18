@@ -4,11 +4,13 @@
 
 <div class="top-bar d-flex align-items-center">
     <div class="logo-div d-flex align-items-center">
-        <i class="bi bi-lungs-fill"></i>
-        <h1 class="ms-2">Snakeroo</h1>
+        <a class="d-flex align-items-center text-decoration-none" style="color: inherit;" href="<?php echo $GLOBALS["views_folder"] ?>">
+            <i class="bi bi-lungs-fill"></i>
+            <h1 class="ms-2">Snakeroo</h1>
+        </a>
     </div>
     <div class="navbar">
-        <a href="#">Home</a>
+        <a href="<?php echo $GLOBALS["views_folder"] ?>">Home</a>
         <a href="#">Services</a>
         <a href="#">FAQ</a>
         <a href="#">Contact</a>
@@ -17,8 +19,10 @@
         <?php
             if ($user) {
                 echo '
-                <a href="'.$GLOBALS["views_folder"].'/logout"><button class="mx-1 opposite-btn">Logout</button></a>
-                <button>My Orders</button>';
+                <button class="opposite-btn">My Orders</button>
+                <a href="'.$GLOBALS["views_folder"].'/logout"><button class="icon mx-1"><i class="bi bi-door-closed"></i></button></a>
+                <a href="'.$GLOBALS["views_folder"].'/myaccount"><button class="icon mx-1"><i class="bi bi-person-circle"></i></button></a>
+                ';
             } else {
                 echo '
                 <a href="'.$GLOBALS["views_folder"].'/login"><button class="mx-1 opposite-btn">Login</button></a>

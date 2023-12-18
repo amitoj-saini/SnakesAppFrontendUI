@@ -39,6 +39,14 @@ button, button.opposite-btn:hover {
     border: none;
 }
 
+button.icon {
+    padding: 7.5px !important;
+}
+
+button.icon i {
+    font-size: 12px !important;
+}
+
 button.opposite-btn, button:hover, input {
     border: solid var(--light-secondary) 1px !important;
     color: var(--light-secondary) !important;

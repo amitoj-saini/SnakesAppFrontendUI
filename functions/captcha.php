@@ -1,7 +1,7 @@
 <?php
     session_start();
     function generateCaptchaToken($length = 6) {
-        $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $characters = '123456789ABCDEFGHIJKLMNPQRSTUVWXYZ';
         $code = '';
         for ($i = 0; $i < $length; $i++) {
             $code .= $characters[rand(0, strlen($characters) - 1)];
@@ -24,7 +24,7 @@
     }
 
     function verifyCaptcha($captcha) {
-        if ($_SESSION["captcha"] == $captcha) return true;
+        if (strtolower($_SESSION["captcha"]) == strtolower($captcha)) return true;
         return false;
     }
 ?>

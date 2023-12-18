@@ -1,6 +1,6 @@
 <?php
-    include_once (__DIR__."/../functions/middleware.php");
     header('Cache-Control "public, max-age=12400";');
+    include_once (__DIR__."/../functions/middleware.php");
 ?>
 
 <head>
